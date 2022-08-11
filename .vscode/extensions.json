@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "streetsidesoftware.code-spell-checker",
+        "saikou9901.evilinspector",
+        "oderwat.indent-rainbow",
+        "visualstudioexptteam.vscodeintellicode",
+        "ms-ceintl.vscode-language-pack-ja",
+        "kiteco.kite",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "pkief.material-icon-theme",
+        "christian-kohler.path-intellisense"
+    ]
+}
