@@ -1,0 +1,25 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/node:18.7.0
+    working_directory: ~/project/app
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm test
+  build:
+    docker:
+      - image: cimg/node:18.7.0
+    working_directory: ~/project/app
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build
+
+workflows:
+  test_build:
+    jobs:
+      - test
+      - build
