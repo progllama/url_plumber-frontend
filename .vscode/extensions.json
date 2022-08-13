@@ -10,6 +10,7 @@
         "davidanson.vscode-markdownlint",
         "pkief.material-icon-theme",
         "christian-kohler.path-intellisense",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "bradlc.vscode-tailwindcss"
     ]
 }
