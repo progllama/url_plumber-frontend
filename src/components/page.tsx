@@ -1,68 +1,42 @@
-import { ReactNode } from 'react';
-import Header from "./header/header"
-import Content from './content/content';
-import Warning from './utility/warning'
+import { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
+import { Header } from "./header";
 
-function Page(): JSX.Element {
-    const height = "h-full";
-    const width = "w-full";
-    const bg = "bg-slate-700"
-    const flex = "flex flex-col"
-    const style = [height, width, bg, flex].join(" ");
+const BG_COLOR = "bg-gray-900";
+const WIDTH = "w-screen";
+const HEIGHT = "h-screen";
 
+// 2段レイアウト
+function Page() {
     return (
-        <div className={style}>
+        <div className={`${BG_COLOR} ${WIDTH} ${HEIGHT} text-white flex flex-col`}>
             <HeaderContainer>
                 <Header />
             </HeaderContainer>
             <ContentContainer>
-                <Content />
+                <Outlet />
             </ContentContainer>
-            <UtilityContainer>
-                <Warning />
-            </UtilityContainer>
-        </ div>
+        </div>
     );
 }
 
-function HeaderContainer({ children }: {
-    children?: ReactNode;
-}): JSX.Element {
-    const height = "h-14";
-    const width = "w-full";
-    const flex = "flex-grow-0 flex-shrink-0";
-    const style = [height, width, flex].join(" ");
-
+// 中身の要素に合わせて高さは変更
+// 伸縮はしない
+function HeaderContainer({ children }: { children: ReactNode }) {
     return (
-        <div className={style}>
+        <div className="h-auto w-full flex-shrink-0 flex-grow-0">
             {children}
         </div>
     );
 }
 
-function ContentContainer({ children }: {
-    children?: ReactNode;
-}): JSX.Element {
-    const height = "h-0";
-    const width = "w-full";
-    const flex = "flex-grow flex-shrink";
-    const style = [height, width, flex].join(" ");
-
+// 高さ = 画面の高さ - ヘッダの高さ
+function ContentContainer({ children }: { children: ReactNode }) {
     return (
-        <div className={style}>
+        <div className="h-0 w-full flex-1">
             {children}
         </div>
     );
 }
 
-function UtilityContainer({ children }: {
-    children?: ReactNode;
-}): JSX.Element {
-    return (
-        <div className="w-0 h-0">
-            {children}
-        </div>
-    )
-}
-
-export default Page;
+export { Page };
