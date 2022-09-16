@@ -1,27 +1,7 @@
 function Folders(): JSX.Element {
     return (
-        <OuterContainer>
-            <InnerContainer>
-
-            </InnerContainer>
-        </OuterContainer>
+        <div></div>
     );
-}
-
-function OuterContainer(props: Props): JSX.Element {
-    return (
-        <div className="w-full h-full">
-            {props.children}
-        </div>
-    )
-}
-
-function InnerContainer(props: Props): JSX.Element {
-    return (
-        <div className="">
-            {props.children}
-        </div>
-    )
 }
 
 interface Props {
